@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    /* Type Checking */
+    "strict": true,
+    "forceConsistentCasingInFileNames": true, // <--- 采纳了trae方案的优点
+
+    /* Modules */
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "resolveJsonModule": true, // <--- 我的方案中的便利性选项
+
+    /* Emit */
+    "sourceMap": true, // <--- 我的方案中的调试关键选项
+    "outDir": "dist",
+
+    /* Language and Environment */
+    "target": "ES2022",
+    "lib": ["ESNext"], // <--- 我的方案中的重要选项
+
+    /* Completeness */
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts", "prisma/seed.ts"], // <--- 结合两者，更精确的写法
+  "exclude": ["node_modules"]
+}
