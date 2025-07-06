@@ -1,0 +1,19 @@
+# docker-compose.yml
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root' # 设置 root 密码
+      MYSQL_DATABASE: 'needs_analysis_db'       # 自动创建的数据库名
+      MYSQL_USER: 'needs_analysis_user'                         # 自动创建的用户名
+      MYSQL_PASSWORD: '123456'                 # 自动创建的用户密码
+    ports:
+      # 将容器的 3306 端口映射到您电脑的 3306 端口
+      - "3306:3306"
+    volumes:
+      # 将数据库数据持久化存储在本地，防止容器重启后数据丢失
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
